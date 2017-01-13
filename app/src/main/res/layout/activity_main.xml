@@ -10,8 +10,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.williammendis.mingalgeleg.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <!-- put William's dope galgeleg gaem image here -->
+
+        <Button
+            android:text="START GALGELEG"
+            android:textSize="20dp"
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/gameOn"
+            android:layout_weight="1"/>
+
+        <Button
+            android:text="HVORDAN SPILLER MAN?!"
+            android:textSize="20dp"
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/help"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </RelativeLayout>
