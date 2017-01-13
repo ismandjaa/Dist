@@ -17,7 +17,7 @@ import static android.R.attr.button;
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button guessButton;
-    private EditText guesstext;
+    private EditText guessText;
     private ImageView stickman;
     private TextView sometext;
     Galgelogik logic = new Galgelogik();
@@ -28,11 +28,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_game);
 
         guessButton = (Button) findViewById(R.id.guessButton);
+        guessText = (EditText) findViewById(R.id.guessText);
 
 
     }
     @Override
     public void onClick(View v) {
+        String guesstext = guessText.getText().toString();
         if (v == guessButton){
 
         }
