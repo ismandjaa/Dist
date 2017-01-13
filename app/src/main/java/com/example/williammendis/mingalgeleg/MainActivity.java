@@ -1,82 +1,54 @@
 package com.example.williammendis.mingalgeleg;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {public static void main(String[] args) {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Galgelogik spil = new Galgelogik();
-    spil.nulstil();
-/*
-    try {
-      spil.hentOrdFraDr();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-*/
-    spil.logStatus();
-
-    spil.gætBogstav("e");
-    spil.logStatus();
-
-    spil.gætBogstav("a");
-    spil.logStatus();
-    System.out.println("" + spil.getAntalForkerteBogstaver());
-    System.out.println("" + spil.getSynligtOrd());
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("i");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("s");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("r");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("l");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("b");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("o");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("t");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("n");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("m");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("y");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("p");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-
-    spil.gætBogstav("g");
-    spil.logStatus();
-    if (spil.erSpilletSlut()) return;
-}
+    private Button startGame;
+    private Button help;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startGame = (Button) findViewById(R.id.gameOn);
+        startGame.setOnClickListener(this);
+        help = (Button) findViewById(R.id.help);
+        help.setOnClickListener(this);
+
     }
-}
+
+    @Override
+    public void onClick(View v){
+        if(v == startGame){
+            Intent s = new Intent(this, HelpActivity.class);
+            startActivity(s);
+        }
+        else if(v == help){
+             Intent h = new Intent(this, HelpActivity.class);
+             startActivity(h);
+         }
+    }
+   // @Override
+    //public void onClick(View v) {
+       // if (v == startGame){
+            //FragmentManager fragmentManager = getSupportFragmentManager();
+            //FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+           // HelpFragment fragment = new HelpFragment();
+           // fragmentTransaction.add(R.id.activity_main, fragment);
+          //  fragmentTransaction.commit();
+
+        //}
+
+
+   // }
+
+
+    }
