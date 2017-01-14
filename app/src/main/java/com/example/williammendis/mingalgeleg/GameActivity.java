@@ -78,6 +78,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             if (logic.erSpilletTabt()){
                 guessText.setText("DU ER DØD, GAME OVER!");
                 userText.setText("ordet var: " + logic.getOrdet());
+                guessButton.setText("SPIL IGEN?");
+                if (v == guessButton){
+                    logic.nulstil();
+                    userText.setText("");
+                }
+
             }
 
         }
