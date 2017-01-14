@@ -67,15 +67,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             if (logic.getAntalForkerteBogstaver() == 6){
                 stickman.setImageResource(R.drawable.forkert6);
             }
+
+            guessText.setText("Du skal gætte ordet: " + logic.getSynligtOrd());
+            someText2.setText("brugte bogstaver: " + logic.getBrugteBogstaver());
+            someText.setText("du har gættet forkert " + logic.getAntalForkerteBogstaver() + " gange");
+
             if (logic.erSpilletVundet()){
                 guessText.setText("SPILLET ER VUNDET!");
             }
             if (logic.erSpilletTabt()){
                 guessText.setText("DU ER DØD, GAME OVER!");
+                userText.setText("ordet var: " + logic.getOrdet());
             }
-            guessText.setText("Du skal gætte ordet: " + logic.getSynligtOrd());
-            someText2.setText("brugte bogstaver: " + logic.getBrugteBogstaver());
-            someText.setText("du har gættet forkert " + logic.getAntalForkerteBogstaver() + " gange");
+
         }
     }
 }
