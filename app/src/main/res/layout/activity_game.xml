@@ -16,12 +16,22 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20dp"
+            android:text="du skal gætte ordet.."
+            android:gravity="center"
+            android:id="@+id/guessText"/>
+
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:hint="indtast gæt her"
-            android:id="@+id/guessText"/>
+            android:gravity="center"
+            android:id="@+id/userText"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -29,6 +39,29 @@
             android:layout_gravity="bottom"
             android:text="GÆT"
             android:id="@+id/guessButton"/>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/stickman"
+            android:src="@drawable/galge"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="du har gættet forkert mange gange"
+            android:gravity="center"
+            android:id="@+id/someText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="du har stadig 5 liv"
+            android:gravity="center"
+            android:id="@+id/someText2"/>
+
 
 
 
