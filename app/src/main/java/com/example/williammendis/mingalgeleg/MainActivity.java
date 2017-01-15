@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         if(v == startGame){
-            Intent s = new Intent(this, GameActivity.class);
-            startActivity(s);
+            Intent w = new Intent(this, WordActivity.class);
+            startActivity(w);
         }
         else if(v == help){
              Intent h = new Intent(this, HelpActivity.class);

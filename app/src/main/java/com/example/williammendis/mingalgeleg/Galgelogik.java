@@ -34,6 +34,10 @@ public class Galgelogik {
         return brugteBogstaver;
     }
 
+    public ArrayList<String> getMuligeOrd() {
+        return muligeOrd;
+    }
+
     public String getSynligtOrd() {
         return synligtOrd;
     }
