@@ -27,6 +27,11 @@ public class WordActivity extends AppCompatActivity{
         ListView wordList = (ListView) findViewById(R.id.wordList);
         async task = new async();
         task.execute();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         ArrayAdapter<String> myAdapter =
                 new ArrayAdapter<String>(this, R.layout.activity_word2, logic.getMuligeOrd());
