@@ -23,12 +23,27 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private TextView guessText;
     private TextView someText;
     private TextView someText2;
+
     Galgelogik logic = new Galgelogik();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
+        Bundle extra = getIntent().getExtras();
+
+
+        if (extra != null) {
+            String value = extra.getString("KEY");
+            System.out.println("we got the word boss " + value);
+            logic.setOrdet(value);
+            logic.opdaterSynligtOrd();
+
+
+        } else {
+            System.out.println("we aint got it");
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
 
         guessButton = (Button) findViewById(R.id.guessButton);
         guessButton.setOnClickListener(this);

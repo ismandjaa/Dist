@@ -23,6 +23,7 @@ import java.util.List;
 public class WordActivity extends AppCompatActivity{
     Galgelogik logic = new Galgelogik();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +50,9 @@ public class WordActivity extends AppCompatActivity{
                 String chosentext = (String)adapter.getItemAtPosition(position);
                 System.out.println("chosen word was: " + chosentext);
                 logic.setOrdet(chosentext);
+
                 Intent myIntent = new Intent(v.getContext(), GameActivity.class);
+                myIntent.putExtra("KEY", chosentext);
                 startActivity(myIntent);
 
             }

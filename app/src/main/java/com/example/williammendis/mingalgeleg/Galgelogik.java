@@ -1,5 +1,8 @@
 package com.example.williammendis.mingalgeleg;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,6 +31,7 @@ public class Galgelogik {
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
+
 
 
     public ArrayList<String> getBrugteBogstaver() {
@@ -69,6 +73,7 @@ public class Galgelogik {
 
     public void setOrdet(String setOrdet) {
         ordet = setOrdet;
+        System.out.println("lige nu er ordet: " + ordet);
     }
 
     public Galgelogik() {
@@ -82,12 +87,18 @@ public class Galgelogik {
         antalForkerteBogstaver = 0;
         spilletErVundet = false;
         spilletErTabt = false;
+        if (ordet == null){
         ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
-        opdaterSynligtOrd();
+        System.out.println("ordet var null derfor er det nu: " + ordet);
+        opdaterSynligtOrd();}
+        else{
+            System.out.println("ordet var ikke null derfor er det: " + ordet);
+            opdaterSynligtOrd();}
+
     }
 
 
-    private void opdaterSynligtOrd() {
+    public void opdaterSynligtOrd() {
         synligtOrd = "";
         spilletErVundet = true;
         for (int n = 0; n < ordet.length(); n++) {
@@ -159,4 +170,6 @@ public class Galgelogik {
         System.out.println("muligeOrd = " + muligeOrd);
         nulstil();
     }
+
+
 }
