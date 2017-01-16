@@ -67,7 +67,12 @@ public class Galgelogik {
     }
 
 
+    public void setOrdet(String setOrdet) {
+        ordet = setOrdet;
+    }
+
     public Galgelogik() {
+
         muligeOrd.add("bil");
         nulstil();
     }
